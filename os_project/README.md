@@ -30,7 +30,7 @@
 **1. Compile the C simulator:**
 ```bash
 cd os_project
-make
+make clean && make
 ```
 
 **2. Start the server:**
