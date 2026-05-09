@@ -20,6 +20,14 @@
         <section class="card" id="input-section">
             <h2>📥 Input Panel</h2>
 
+            <div class="scenario-bar">
+                <span class="scenario-label">Load Scenario:</span>
+                <button class="scenario-btn" onclick="loadScenario('A')">📦 Scenario A<br><small>Basic Mixed</small></button>
+                <button class="scenario-btn" onclick="loadScenario('B')">⚔️ Scenario B<br><small>Priority vs Burst</small></button>
+                <button class="scenario-btn" onclick="loadScenario('C')">⏳ Scenario C<br><small>Starvation</small></button>
+                <button class="scenario-btn scenario-btn--danger" onclick="loadScenario('D')">❌ Scenario D<br><small>Invalid Input</small></button>
+            </div>
+
             <div class="input-row">
                 <label>Number of Processes:</label>
                 <input type="number" id="num-processes" min="1" max="20" value="3">

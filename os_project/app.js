@@ -42,6 +42,74 @@ function resetInput() {
     document.getElementById("error-msg").textContent               = "";
     document.getElementById("reset-btn").style.display             = "none";
 }
+
+
+const SCENARIOS = {
+    A: {
+        label: "Scenario A — Basic Mixed Workload",
+        processes: [
+            { pid: 1, at: 0, bt: 6, pr: 2 },
+            { pid: 2, at: 1, bt: 4, pr: 1 },
+            { pid: 3, at: 3, bt: 2, pr: 3 },
+            { pid: 4, at: 5, bt: 8, pr: 2 },
+        ]
+    },
+    B: {
+        label: "Scenario B — Priority vs Burst Conflict",
+        processes: [
+            { pid: 1, at: 0, bt: 10, pr: 1 },
+            { pid: 2, at: 0, bt: 2,  pr: 3 },
+            { pid: 3, at: 0, bt: 3,  pr: 2 },
+        ]
+    },
+    C: {
+        label: "Scenario C — Starvation Sensitive",
+        processes: [
+            { pid: 1, at: 0, bt: 5, pr: 3 },
+            { pid: 2, at: 2, bt: 1, pr: 1 },
+            { pid: 3, at: 4, bt: 1, pr: 1 },
+            { pid: 4, at: 6, bt: 1, pr: 1 },
+            { pid: 5, at: 8, bt: 1, pr: 1 },
+        ]
+    },
+    D: {
+        label: "Scenario D — Invalid Input (BT = 0)",
+        processes: [
+            { pid: 1, at: 0, bt: 0, pr: 1 },
+        ]
+    }
+};
+
+function loadScenario(key) {
+    const scenario = SCENARIOS[key];
+    if (!scenario) return;
+
+    const n = scenario.processes.length;
+
+    document.getElementById("num-processes").value = n;
+    document.getElementById("error-msg").textContent = "";
+    document.getElementById("results-section").style.display = "none";
+
+    const tbody = document.getElementById("input-body");
+    tbody.innerHTML = "";
+
+    scenario.processes.forEach((p, i) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td><input type="number" id="pid-${i}" value="${p.pid}" min="1"></td>
+            <td><input type="number" id="at-${i}"  value="${p.at}"  min="0"></td>
+            <td><input type="number" id="bt-${i}"  value="${p.bt}"  min="1"></td>
+            <td><input type="number" id="pr-${i}"  value="${p.pr}"  min="1"></td>
+        `;
+        tbody.appendChild(row);
+    });
+
+    document.getElementById("process-table-wrapper").style.display = "block";
+    document.getElementById("reset-btn").style.display             = "inline-block";
+
+    document.querySelectorAll(".scenario-btn").forEach(btn => btn.classList.remove("active"));
+    event.currentTarget.classList.add("active");
+}
  
  
 function validateInput(processes) {
