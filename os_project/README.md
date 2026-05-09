@@ -27,9 +27,9 @@ The simulator runs both algorithms on the same input and displays:
 | No. | Student Name | Student ID | Contribution |
 |-----|-------------|------------|--------------|
 | 1   | Jalal Ramadan Jalal        | 20240234   |              |
-| 2   | Zyad Ramadan Abd El-Karem  | 20240378   |              |
+| 2   | Zyad Ramadan Abd El-Karim  | 20240378   |              |
 | 3   | Mostafa Ashraf Zaher       | 20240957   |              |
-| 4   | Menna Mohamed Serag Elden  | 20241021   |              |
+| 4   | Menna Mohamed Seraj El Din  | 20241021   |              |
 | 5   | Mayar Mohamed Abd El-Hamed | 20241037   |              |
 | 6   | Manar Abd El-Aal Selmy     | 20241003   |              |
 
