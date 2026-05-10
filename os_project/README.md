@@ -10,7 +10,10 @@ Operating Systems Course | Algorithm Comparison Project
 
 This project implements and compares two CPU scheduling algorithms:
 
-- **Priority Scheduling** — selects the process with the highest priority (lowest number). Non-preemptive: runs to full completion. Tie-breaking: earlier arrival time wins.
+- **Preemptive Priority Scheduling — selects the process with the highest priority (lowest number).
+If a new process arrives with a higher priority than the currently running one, it preempts it immediately.
+Does not wait for the current process to finish (unlike non-preemptive).
+Tie-breaking: if priorities are equal → earlier arrival time wins.
 - **SRTF (Shortest Remaining Time First)** — always runs the process with the least remaining burst time. Fully preemptive: a newly arrived shorter job immediately takes the CPU.
 
 The simulator runs both algorithms on the same input and displays:
