@@ -198,7 +198,7 @@ Verifies that the system correctly rejects malformed input without crashing.
 | Property           | Priority Scheduling       | SRTF                        |
 |--------------------|---------------------------|-----------------------------|
 | Scheduling basis   | Priority number           | Remaining burst time        |
-| Preemption         | Non-preemptive            | Fully preemptive (per tick) |
+| Preemption         | Non-preemptive,pre (this proj is pre)           | Fully preemptive (per tick) |
 | Avg Waiting Time   | Higher                    | Lower                       |
 | Avg Response Time  | Higher                    | Lower                       |
 | Starvation risk    | Low-priority processes    | Long processes              |
